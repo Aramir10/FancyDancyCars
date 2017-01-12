@@ -1,0 +1,16 @@
+<!DOCTYPE>
+<html ng-app = "CarApp">
+  <head>
+    <meta charset="utf-8">
+    <title ></title>
+  </head>
+  <body ng-controller = "carController">
+    <h1> {{hello}} </h1>
+    <h2 ng-repeat = "make in makes"> {{make.id}}, {{make.name}} </h2>
+  <script src = "bower_components/jquery/dist/jquery.min.js"></script>
+  <script src ="bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>
+  <script src ="bower_components/angular/angular.min.js" ></script>
+  <script src="carApp.js"></script>
+  <script src="carController.js"></script>
+  </body>
+</html>

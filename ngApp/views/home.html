@@ -1,0 +1,8 @@
+<h3>Visit us to turn that LEMON into LEMONADE! </br> Drive off with a fancy new car TODAY!!!<h3>
+   <div >SEARCH<input ng-model="searchCar" placeholder="SEARCH..." /></div>
+   <div class="main">
+        <div ng-repeat="vic in controller.vehicles | filter:searchCar">
+            <h5 class="name">{{vic.ShortDescription}}</h5>
+            <img src="{{vic.ImageUrl}}" width="200" height="150">
+        </div>
+   </div> 

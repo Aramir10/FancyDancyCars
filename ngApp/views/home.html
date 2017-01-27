@@ -1,8 +1,17 @@
+
 <h3>Visit us to turn that LEMON into LEMONADE! </br> Drive off with a fancy new car TODAY!!!<h3>
-   <div >SEARCH<input ng-model="searchCar" placeholder="SEARCH..." /></div>
-   <div class="main">
-        <div ng-repeat="vic in controller.vehicles | filter:searchCar">
-            <h5 class="name">{{vic.ShortDescription}}</h5>
-            <img src="{{vic.ImageUrl}}" width="200" height="150">
-        </div>
-   </div> 
+
+<form class="form-search">
+    <div class="input-append">
+        <input type="text" name="search" class="span2 search-query" ng-model="searchCar.ShortDescription" ng-model-options="{debounce:500}"   placeholder="SEARCH..." style="text-transform:uppercase" >
+    </div>
+</form>
+
+
+<ul>
+    <li ng-repeat="car in controller.cars | filter:searchCar">
+<md-button  class="md-primary md-raised"  ng-click="controller.openDialog(car)">{{car.ShortDescription}}</md-button></br>
+        <img class="vicImage" src="{{car.ImageUrl}}" width="250" height="150" ></img>
+    </li>
+</ul>
+

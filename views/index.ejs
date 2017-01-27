@@ -6,29 +6,33 @@
   <meta charset="utf-8">
   <base href="/" />
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link href="/bower_components/angular-material/angular-material.css" rel="stylesheet" />
   <link rel="stylesheet" href="/ngApp/css/site.css"/>
 </head>
 
-<body>
-  <div class="container">
+<body ng-cloak>
+      <div>
         <h1>Lemons to Lemonade Cars</h1>
+      <div>  
+    
         <div>
           <a href="/">Home</a> /
-          <a href="/about">About</a> /
-          <a href="/display">Display</a>
+          <a href="/about">About</a>
+            <hr/>
+          <ui-view></ui-view>
+      
         </div>
-        <hr />
-        
-        <ui-view></ui-view>
-  </div>
 
   <script src="/bower_components/angular/angular.min.js"></script>
   <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
   <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="/bower_components/angular-touch/angular-touch.min.js"></script>
-  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/angular-material/angular-material.min.js"></script>
+  <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="/bower_components/angular-messages/angular-messages.min.js"></script>
 
   <script src="/ngApp/app.js"></script>
   <script src="/ngApp/controllers/controllers.js"></script>

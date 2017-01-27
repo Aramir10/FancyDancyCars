@@ -1,0 +1,26 @@
+<md-dialog class="myModal" aria-label="label">
+   <md-toolbar class="tbar">   
+        <h1>About your</br> {{modal.car.ShortDescription}}</h1>
+   </md-toolbar>
+   <md-dialog-content>
+         <div class="md-dialog-content"  layout-align="center center">
+            <h2>PRICE:{{modal.car.Price | currency}}<h2></br>
+            <img class="vicImage" src="{{modal.car.ImageUrl}}" width="250" height="150" ></img></br>
+            <p class="carDisc">{{modal.car.FullDescription}}</p>
+            <md-input-container>    
+                <md-select class='modSel' ng-model="edition" placeholder="Select a Package">
+                    <md-option class="modOpt" value="BASE MODEL">BASE MODEL</md-option>
+                    <md-option class="modOpt" value="SPORT MODEL">SPORT MODEL</md-option>
+                    <md-option class="modOpt" value="LUXURY MODEL">LUXURY MODEL</md-option>
+                </md-select>
+            </md-input-container>
+         </div>
+   </md-dialog-content>
+   <md-dialog-actions>
+     <div>
+          Would you like us to build your {{edition}}, {{modal.car.ShortDescription}}?</br>
+          <md-button ng-click="modal.closeDialog()" class="dialog-class" aria-label="label">PLEASE</md-button>
+          <md-button ng-click="modal.closeDialog()" class="dialog-class" aria-label="label">NO THANKS</md-button>
+     </div>
+   </md-dialog-actions>
+</md-dialog>

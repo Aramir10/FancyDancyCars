@@ -1,4 +1,3 @@
-
 import * as express from 'express';
 import * as path from 'path';
 import * as favicon from 'serve-favicon';
@@ -9,21 +8,6 @@ import * as ejs from 'ejs';
 
 import routes from './routes/index';
 import users from './routes/users';
-
-import Database from './db';
-import cars from './api/cars';
-// open database connection
-Database.connect().then(() => {
-  // drop everything
-  Database.db.dropDatabase().then(() => {
-    // seed with new cars
-    Database.db.collection('cars').insert([
-      {name:'Lambo', price: 933000},
-      {name:'Chevy', price: 2.00},
-      {name:'Bently', price: 450000}
-    ]);
-  });
-})
 
 let app = express();
 
@@ -36,7 +20,6 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/api/cars', cars);
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
@@ -45,6 +28,11 @@ app.use('/api', express.static(path.join(__dirname, 'api')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+
+// APIs
+app.use('/api', require('./api/makes'));
+app.use('/api', require('./api/cars'));
 
 
 // redirect 404 to home for the sake of AngularJS client-side routes

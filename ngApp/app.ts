@@ -1,6 +1,6 @@
 namespace carsapp {
 
-    angular.module('carsapp', ['ui.router', 'ngResource', 'ui.bootstrap']).config((
+    angular.module('carsapp', ['ui.router', 'ngResource', 'ngMaterial', 'ngMessages','ui.bootstrap']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider
@@ -17,12 +17,6 @@ namespace carsapp {
                 url: '/about',
                 templateUrl: '/ngApp/views/about.html',
                 controller: carsapp.Controllers.AboutController,
-                controllerAs: 'controller'
-            })
-            .state('display', {
-                url: '/display',
-                templateUrl: '/ngApp/views/display.html',
-                controller: carsapp.Controllers.DisplayController,
                 controllerAs: 'controller'
             })
             .state('notFound', {

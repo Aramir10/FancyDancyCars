@@ -1,0 +1,26 @@
+.input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
+}
+html{
+    background-color: gold;
+}
+body{
+    background-color: gold;
+}
+.myModal{
+    background-color: black;
+    color: gold; 
+    align-content: center;
+}
+
+.modSel{
+    background-color: white;
+    color:blue
+}
